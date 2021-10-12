@@ -4,6 +4,8 @@ Qrcode 二维码生成与解码
 > 运行环境要求PHP7.1+。
 > 使用到的依赖 thinkphp、layui、phpqrcode、qrcode-detector-decoder、phpspreadsheet、PHPArchive
 
+B站视频：[https://www.bilibili.com/video/BV15K4y1f7SR/](https://www.bilibili.com/video/BV15K4y1f7SR/)
+
 ## 安装
 ```shell
 composer require topthink/think-view
