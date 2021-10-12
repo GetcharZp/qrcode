@@ -1,0 +1,23 @@
+{extend name="index/base"}
+{block name="links"}
+<link rel="stylesheet" href="/static/index/css/api.css">
+{/block}
+{block name="title"}API{/block}
+{block name="main"}
+<div class="main">
+<div class="url">
+    <div class="url-item">
+        Api:  <b>{:think\\facade\\Request::domain()}/api/qrcode?text=</b>
+    </div>
+
+    <div class="eg">
+        <div class="eg-url">
+            Eg:   <b>{:think\\facade\\Request::domain()}/api/qrcode?text=1234</b>
+        </div>
+        <div class="eg-img">
+            <img src="/api/qrcode?text=1234" alt="">
+        </div>
+    </div>
+</div>
+</div>
+{/block}

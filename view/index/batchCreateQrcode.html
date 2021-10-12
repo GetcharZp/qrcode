@@ -1,0 +1,40 @@
+{extend name="index/base"}
+{block name="links"}
+<link rel="stylesheet" href="/static/index/css/batchCreateQrcode.css">
+{/block}
+{block name="title"}批量生成二维码{/block}
+{block name="main"}
+<div class="main">
+    <div class="quote">
+        以表格第一列第一行的数据开始，以第一列数据作为输入，来批量生成二维码
+    </div>
+    <button type="button" class="layui-btn layui-btn-primary" id="upload"><i class="layui-icon"></i>请上传xlsx格式的文件</button>
+    <div id="download" class="quote"></div>
+
+    <script>
+        layui.use('upload', function(){
+            var $ = layui.jquery
+                ,upload = layui.upload;
+
+            upload.render({ //允许上传的文件后缀
+                elem: '#upload'
+                ,url: '/api/upload' //改成您自己的上传接口
+                ,accept: 'file' //普通文件
+                ,exts: 'xlsx' //只允许上传压缩文件
+                ,size: 1000
+                ,done: function(res){
+                    // layer.msg('上传成功，生成中~');
+                    $.get("{:url('/api/batchCreateQrcode')}", {savename: res.savename}, function (res) {
+                        if (res.code === 200) {
+                            layer.msg("生成成功，点击下载");
+                            $('#download').html("<a href='"+ res.download +"'>点击下载</a>");
+                        }
+                    }, 'json');
+                }
+            });
+        });
+    </script>
+</div>
+<script>
+</script>
+{/block}

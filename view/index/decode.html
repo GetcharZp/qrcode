@@ -1,0 +1,40 @@
+{extend name="index/base"}
+{block name="links"}
+<link rel="stylesheet" href="/static/index/css/decode.css">
+{/block}
+{block name="title"}解码{/block}
+{block name="main"}
+<div class="main">
+    <div class="layui-upload-drag main-img" id="upload">
+        <i class="layui-icon"></i>
+        <p>点击上传，或将文件拖拽到此处</p>
+        <div class="layui-hide" id="uploadDemoView">
+            <hr>
+            <img src="" alt="上传成功后渲染" style="max-width: 196px">
+        </div>
+    </div>
+    <div class="main-text">
+        <textarea name="" id="text" cols="30" rows="10" placeholder="解码结果"></textarea>
+    </div>
+</div>
+<script>
+    layui.use('upload', function(){
+        var $ = layui.jquery
+            ,upload = layui.upload;
+
+        //拖拽上传
+        upload.render({
+            elem: '#upload'
+            ,url: '/api/upload' //改成您自己的上传接口
+            ,size: 1000
+            ,done: function(res){
+                layer.msg('上传成功');
+                layui.$('#uploadDemoView').removeClass('layui-hide').find('img').attr('src', res.savename);
+                $.get("{:url('/api/decode')}", {savename: res.savename}, function (res_decode) {
+                    $("#text").val(res_decode.text);
+                }, 'json');
+            }
+        });
+    });
+</script>
+{/block}

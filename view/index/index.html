@@ -1,0 +1,27 @@
+{extend name="index/base"}
+{block name="links"}
+<link rel="stylesheet" href="/static/index/css/index.css">
+{/block}
+{block name="title"}首页{/block}
+{block name="main"}
+<div class="main">
+    <div class="text">
+        <textarea name="" id="text" cols="30" rows="10"></textarea>
+        <button onclick="createOrcode()">生成二维码</button>
+    </div>
+    <div class="qrcode" id="qrcode">
+        <div class="qrcode-title">二维码</div>
+        <!--<img src="/temp-image.png" alt="">-->
+    </div>
+    <script>
+        function createOrcode() {
+            let text = $('#text').val();
+            if (text === "") {
+                layer.msg("请输入待转码的字符串");
+                return false;
+            }
+            $('#qrcode').html("<img src='/api/qrcode?text=" + text + "' alt=\"\">");
+        }
+    </script>
+</div>
+{/block}

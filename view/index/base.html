@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/index/css/layer.css">
+    <link rel="stylesheet" href="/static/index/css/layui.css">
+    <link rel="stylesheet" href="/static/index/css/base.css">
+    <script src="/static/index/js/jquery.min.js"></script>
+    <script src="/static/index/js/layer.js"></script>
+    <script src="/static/index/js/layui.min.js"></script>
+    {block name="links"}其他CSS、JS文件{/block}
+    <title>GetcharZp二维码生成 - {block name="title"}标题{/block}</title>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="nav-item"><a href="{:url('/')}">首页</a></div>
+        <div class="nav-item"><a href="{:url('/api')}">API</a></div>
+        <div class="nav-item"><a href="{:url('/decode')}">解码</a></div>
+        <div class="nav-item"><a href="{:url('/batchCreateQrcode')}">批量生码</a></div>
+    </nav>
+</header>
+{block name="main"}正文{/block}
+<footer> GetcharZp © {:date("Y")}</footer>
+</body>
+</html>
