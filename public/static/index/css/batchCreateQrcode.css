@@ -1,0 +1,22 @@
+.main {
+    width: 1100px;
+    margin: 100px auto 0 auto;
+}
+
+.quote {
+    background-color: #ecf8ff;
+    border-left: 5px solid #50bfff;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+    margin: 15px 0;
+    font-size: 13px;
+}
+
+#download {
+    text-align: center;
+}
+
+#download a {
+    text-decoration: underline;
+}

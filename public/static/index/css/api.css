@@ -1,0 +1,36 @@
+.main {
+    width: 1100px;
+    margin: 100px auto 0 auto;
+}
+
+.url-item {
+    background-color: #ecf8ff;
+    border-left: 5px solid #50bfff;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+}
+
+.eg {
+    display: flex;
+    margin-top: 20px;
+}
+
+.eg-url {
+    background-color: #ecf8ff;
+    border-left: 5px solid #50bfff;
+    width: 65%;
+    height: 100px;
+    line-height: 100px;
+    padding-left: 10px;
+}
+
+.eg-img {
+    width: 30%;
+    height: 100px;
+}
+
+.eg-img img {
+    width: 100px;
+    height: 100px;
+}
