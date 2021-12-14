@@ -8,9 +8,7 @@ B站视频：[https://www.bilibili.com/video/BV15K4y1f7SR/](https://www.bilibili
 
 ## 安装
 ```shell
-composer require topthink/think-view
-composer require khanamiryan/qrcode-detector-decoder
-composer require phpoffice/phpspreadsheet
+composer install
 ```
 
 
